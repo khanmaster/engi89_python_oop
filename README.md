@@ -87,3 +87,23 @@ print(random()) #
 # generates random number every time the programs is executed between 0.0
 # to .99
 ```
+```python
+# Let's see how can we interact with our machine using python
+import os  # os used to get info about your OS
+import math, datetime, sys  # sys is used to get system specific information
+
+work_dir = os.getcwd() # getcwd() provides the current location/path
+print(work_dir)
+
+# Linux/Mac
+# print(os.getuid()) # works on linux and mac
+# print(os.uname()) # works on linux and mac
+# print(os.cpu_count()) # works on linux and mac
+
+print(datetime.date.today()) # today's date
+print(sys.path)
+# type() len()
+
+```
+- Let's install requests using pip
+- `pip install requests`
