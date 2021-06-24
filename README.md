@@ -107,3 +107,146 @@ print(sys.path)
 ```
 - Let's install requests using pip
 - `pip install requests`
+- To check version ` pip -V `
+
+# Object Oriented Programming (OOP)
+## Four Pillars of OOP
+
+- Abstraction 
+-
+-
+
+- Inheritance
+-
+-
+
+- encapsulation
+- 
+-
+
+
+- Polymorphism
+-
+
+
+- step one create an aimal.py file to create parent class
+- step two to create file called reptile.py to abstract data and inherit from animal.py 
+- step three is to create a file called snake.py
+- step four is to create a file called python.py and this point we should be able to utilise inheritance from multiple classes - everything available from animal class to python
+
+```python
+# Let's create an Animal class
+
+class Animal: # follow the correct naming convention
+    # we need to initialise with built in method called __init__(self)
+    # self refers to current class
+    def __init__(self): # we declare attributes in our init method
+        self.alive = True
+        self.spine = True
+        self.eyes = True
+        self.lungs = True
+
+    def breathe(self):
+        return "Keep breathing to stay alive !"
+
+    def eat(self):
+        return "time to eat "
+
+    def move(self):
+        return "move left and right to stay awake "
+
+# we need to create an object of this class in order to use any methods
+cat = Animal() # creating an object of Animal class
+# for cat as a user the functionality inside Animal class and the method breathe is abstracted
+# print(cat.breathe())
+# print(cat.eat())
+
+# Let's move onto our step 2
+```
+```python
+# Let's create reptile class to inherit Animal class
+from animal import Animal # importing Animal class
+
+class Reptile(Animal): # inherting from Animal class
+
+    def __init__(self):
+        super().__init__() # super is used to iherit everything from the parent class
+        self.cold_blooded = True
+        self.tetrapods = None
+        self.heart_chamber = [3, 4]
+
+    def seek_heat(self):
+        return "it's chilly looking have fun in the sun!"
+
+    def hunt(self):
+        return "keep working hard to find food "
+
+    def use_venom(self):
+        return "If I have it I will use it "
+
+# Let's create an object of Reptile class
+smart_reptile = Reptile()
+# print(smart_reptile.breathe()) # breathe method is inherited from Animal class
+# print(smart_reptile.hunt()) # hunt() is available in Reptile class
+# print(smart_reptile.eat())
+# print(smart_reptile.move())
+# print(smart_reptile.hunt())
+
+```
+```python
+
+
+# Let's create a class called Sneak
+
+from reptile import Reptile
+
+class Sneak(Reptile):
+    def __init__(self):
+        super().__init__()
+        self.forked_tongue = True
+        self.cold_blooded = True
+
+# Let's add some specific methods/behaviours
+    def use_tongue_to_smell(self):
+        return "If I can touch it I can smell it "
+
+# Let's create an object of Sneak class
+smart_sneak = Sneak()
+
+# print(smart_sneak.move()) # move() is available from Animal class
+# print(smart_sneak.hunt()) # hunt() is available from Reptile class
+# print(smart_sneak.use_tongue_to_smell()) # from current class
+
+# time to move on to our last step
+
+```
+```python
+# Let's create python class
+
+from sneak import Sneak
+
+class Python(Sneak):
+    def __init__(self):
+        super().__init__()
+        self.large = True
+        self.two_lungs = True
+
+
+    def digest_large_prey(self):
+        return "I can digest anything without chewing "
+
+    def climb(self):
+        return "up we go....."
+
+    def __shed_skin(self):
+        return "I'm growing out of my skin now "
+
+fast_python = Python()
+print(fast_python.__)
+
+# print(fast_python.climb())
+# print(fast_python.hunt())
+# print(fast_python.move())
+# print(fast_python.use_tongue_to_smell())
+# print(fast_python.shed_skin())
+```
